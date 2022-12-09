@@ -62,7 +62,6 @@ body {
     background-color: bisque;
     height: 50px;
     box-shadow: 50px;
-    margin-bottom: 20px;
     padding-top: 15px;
     text-align: center;
 }
@@ -73,6 +72,7 @@ nav a {
     border-radius: 10px;
     text-decoration: none;
     padding: 10px;
+    margin: 10px 10%;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
 }
 
@@ -82,13 +82,31 @@ nav a:hover {
 }
 
 table {
-    margin: 0 auto;
+    width: 100%;
+    border-collapse:collapse;
+    margin-bottom: 50px;
+}
+
+th {
+    background-color: darkgray;
+    padding: 10px 8px;
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #fff;
+  }
+  
+  tbody tr:nth-child(odd) {
+    background-color: #eee;
+  }
+
+tr td a {
+    text-decoration: none;
 }
 
 td {
-    padding: 5px;
-    border-collapse:collapse;
-    border: 1px solid black;
+    padding: 10px;
 }
 
 
