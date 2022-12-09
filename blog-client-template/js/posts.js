@@ -2,12 +2,25 @@ fetchposts();
 
 console.log(document.getElementById("pic-holder"))
 
-document.querySelector("aside").addEventListener("mouseover", () => {
-    document.getElementById("pic-text").innerHTML = `<p>Photo by Armin Lotfi on <a href="https://unsplash.com/s/photos/crazy?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>`;
+document.querySelector("aside").addEventListener("mouseenter", (e) => {
+   e.target.innerHTML = `
+   <div id="pic-holder"><img src="/blog-client-template/img/hyde.jpg" alt=""></div>
+   <p><b>Mr Hyde</b></p>
+   <br>
+   <br>
+   <p>Photo by Armin Lotfi on 
+   <a href="https://unsplash.com/s/photos/crazy?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+   </p>`;
 })
-
-document.querySelector("main").addEventListener("mouseover", () => {
-    document.getElementById("pic-text").innerHTML= `<p>Dr Jekyll Photo by Paolo Bendandi on <a href="https://unsplash.com/s/photos/crazy?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>`
+document.querySelector("aside").addEventListener("mouseleave", (e) => {
+    e.target.innerHTML = `
+    <div id="pic-holder"><img src="/blog-client-template/img/jekyll.jpg" alt=""></div>
+    <div id="pic-text">
+        <p><b>Dr Jekyll</b></p>
+        <br>
+        <br>
+        <p> Photo by Paolo Bendandi on <a href="https://unsplash.com/s/photos/crazy?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
+    </div>`
 })
 
 console.log(document.getElementById("pic-text").innerHTML)
