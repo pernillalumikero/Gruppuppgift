@@ -6,7 +6,29 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>This page is required for the VG grade</h1>
+    <nav>
+        <a href="index.html">Back</a>
+    </nav>
+    <div id="error-message"></div>
+    <form id="create-post-form" action="">
+        <label for="title-input">Title</label>
+        <input type="text" name="title" id="title-input">
+        <label for="author-input">Author</label>
+        <input type="text" name="author" id="author-input">
+        <label for="post-textarea">Content</label>
+        <textarea name="content" id="post-textarea" cols="30" rows="10"></textarea>
+        <label for="tags-select">Select tags</label>
+        <select name="tags" id="tags-select" multiple>
+            <option value="mindfulness">Mindfulness</option>
+            <option value="cup-of-javascript">Cup-of-JavaScript</option>
+            <option value="restful-api">RESTful-API</option>
+            <option value="object-oriented-toxic-clense">Object-oriented-toxic-clense</option>
+            <option value="css-yourself">CSS-yourself</option>
+        </select>
+        <details value="Info">Select muliple:<br/>For Windows, hold ctrl key.<br/>For Mac, hold cmd key.</details>
+        <input type="submit" value="Post">
+    </form>
+
 
     <script src="js/create-post.js"></script>
 </body>
