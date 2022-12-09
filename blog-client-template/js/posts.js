@@ -4,7 +4,7 @@ console.log(document.getElementById("pic-holder"))
 
 document.querySelector("aside").addEventListener("mouseenter", (e) => {
    e.target.innerHTML = `
-   <div id="pic-holder"><img src="/blog-client-template/img/hyde.jpg" alt=""></div>
+   <div id="pic-holder"><img src="./img/hyde.jpg" alt=""></div>
    <p><b>Mr Hyde</b></p>
    <br>
    <br>
@@ -14,7 +14,7 @@ document.querySelector("aside").addEventListener("mouseenter", (e) => {
 })
 document.querySelector("aside").addEventListener("mouseleave", (e) => {
     e.target.innerHTML = `
-    <div id="pic-holder"><img src="/blog-client-template/img/jekyll.jpg" alt=""></div>
+    <div id="pic-holder"><img src="./img/jekyll.jpg" alt=""></div>
     <div id="pic-text">
         <p><b>Dr Jekyll</b></p>
         <br>
@@ -71,8 +71,10 @@ async function fetchposts() {
                     <br>
                 `;
 
-            if (post.tags != null) {
+            if (post.tags != null && post.tags != "") {
                 document.querySelector("main").innerHTML += `<i>Tags: ${post.tags.join(", ")}</i><br><br>`
+            } else {
+                document.querySelector("main").innerHTML += ``;
             }
             
             }
