@@ -8,13 +8,14 @@ async function fetchAllPosts() {
         let postsHTML = '';
         for(let post of posts) {
             let postDate = new Date(post.date);
+            const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
 
             postsHTML += `
                 <tr>
                     <td>${post.title}</td>
                     <td>${post.author}</td>
                     <td>${post.tags}</td>
-                    <td>${postDate.getFullYear()}-${postDate.getMonth() + 1}-${postDate.getDate()} ${postDate.getHours()}-${postDate.getMinutes()}-${postDate.getSeconds()}</td>
+                    <td>${postDate.getDate()}-${months[postDate.getMonth()]}-${postDate.getFullYear()} ${postDate.getHours()}:${postDate.getMinutes()}:${postDate.getSeconds()}</td>
                     <td>
                         <a href="update-post.html?id=${post._id}">Update</a>
                         <a href="#" class="del-btn" data-id="${post._id}">Delete</a>
