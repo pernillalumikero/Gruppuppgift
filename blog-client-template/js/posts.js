@@ -71,8 +71,10 @@ async function fetchposts() {
                     <br>
                 `;
 
-            if (post.tags != null) {
+            if (post.tags != null && post.tags != "") {
                 document.querySelector("main").innerHTML += `<i>Tags: ${post.tags.join(", ")}</i><br><br>`
+            } else {
+                document.querySelector("main").innerHTML += ``;
             }
             
             }
