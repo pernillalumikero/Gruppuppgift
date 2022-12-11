@@ -1,8 +1,16 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 /* CREATE-POST STYLING */
+#create-post-nav {
+    margin: 25px;
+}
 
 #create-post-form {
     width: 50%;
-    margin: 0 auto;
+    margin: 0 auto 20px auto;
 }
 
 input[type=text], select {
@@ -25,13 +33,23 @@ input[type=text], select {
     box-sizing: border-box;
 }
 
-select {
+#error-message {
+    margin-bottom: 10px;
+}
 
+#error-message div {
+    /* width: 100%; */
+    background-color: #c25a5f;
+    color: white;
+    padding: 14px 20px;
+    margin: 5px 0;
+    border-radius: 4px;
 }
 
 input[type=submit] {
     width: 100%;
-    background-color: #04AA6D;
+    background-color: black;
+    font-weight: bold;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -45,4 +63,74 @@ input[type=submit]:hover {
 }
 
 /* ADMIN INDEX STYLING */
+
+body {
+    /* background-image: url('../../img/old-paper.jpg'); */
+    margin: 0;
+}
+
+#navigation {
+    background-color:aliceblue;
+    height: 50px;
+    box-shadow: 50px;
+    padding-top: 15px;
+    text-align: center;
+}
+
+nav a {
+    width: 50px;
+    height: 25px;
+    font-weight: bold;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px 10%;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+}
+
+nav a:hover {
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+table {
+    width: 100%;
+    border-collapse:collapse;
+    margin-bottom: 50px;
+}
+
+th {
+    background-color: darkgray;
+    padding: 10px 8px;
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #fff;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #eee;
+}
+
+tr:hover td {
+    background-color: bisque;
+}
+
+tr td a {
+    text-decoration: none;
+    color: grey;
+    border: 1px solid darkgrey;
+    border-radius: 3px;
+    padding: 3px;
+}
+
+tr td a:hover {
+    background-color: aliceblue;
+}
+
+td {
+    padding: 10px;
+}
+
 
