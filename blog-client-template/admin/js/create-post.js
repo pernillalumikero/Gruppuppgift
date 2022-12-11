@@ -15,20 +15,23 @@ document.getElementById('create-post-form').addEventListener('submit', async fun
                 body: JSON.stringify(formDataObject)
             });
             let data = await response.json();
-            console.log(data);
+
+            if(data.hasOwnProperty('_id')) {
+                window.history.back();
+            }
+
+            // Assign values of the errors key to errorData
             const errorData = Object.values(data.message.errors);
 
+            // Loops through the error messages and places each one in a different div inside the #error-messages div
             for(let value of errorData) {
                 document.getElementById('error-message').innerHTML += `
                     <div>${value.message}</div>
             `;
-            }
-            console.log(data._id);
-            
-            window.history.back();
+            }            
 
         } catch(error) {
-            
+            console.log(error);
         }
         
 });
@@ -37,7 +40,6 @@ document.getElementById('create-post-form').addEventListener('submit', async fun
 let serializeForm = function (form) {
     var obj = {};
     var formData = new FormData(form);
-    // console.log(formData.getAll());
 
     for (var key of formData.keys()) {
         let inputData = formData.getAll(key);
@@ -48,11 +50,10 @@ let serializeForm = function (form) {
             obj[key] = inputData[0];    
         }
     }
-    
-    // console.log(obj);
     return obj;
 };
 
+// Button to auto-fill the different text fields in the form for quicker testing
 document.getElementById('lazy-btn').addEventListener('click', (e) => {
     e.preventDefault();
     document.getElementById('title-input').setAttribute('value', 'Today was a good day');
