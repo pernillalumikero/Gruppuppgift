@@ -72,7 +72,7 @@ body {
 }
 
 #navigation {
-    background-color:aliceblue;
+    background-color:black;
     height: 50px;
     box-shadow: 50px;
     padding-top: 15px;
@@ -85,15 +85,15 @@ nav a {
     font-weight: bold;
     border-radius: 10px;
     text-decoration: none;
-    color: black;
+    color: white;
     padding: 10px;
     margin: 10px 10%;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+    box-shadow: rgba(236, 232, 232, 0.3) 0px 3px 3px 0px;
 }
 
 nav a:hover {
     border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    box-shadow: rgba(236, 232, 232, 0.4) 0px 2px 4px, rgba(236, 232, 232, 0.3) 0px 7px 13px -3px, rgba(236, 232, 232, 0.2) 0px -3px 0px inset;
 }
 
 table {
@@ -117,7 +117,7 @@ tbody tr:nth-child(odd) {
 }
 
 tr:hover td {
-    background-color: bisque;
+    background-color: rgb(111, 183, 243, 0.4);
 }
 
 tr td a {
