@@ -46,6 +46,10 @@ input[type=text], select {
     border-radius: 4px;
 }
 
+#lazy-btn {
+    width: 100%;
+}
+
 input[type=submit] {
     width: 100%;
     background-color: black;
@@ -83,6 +87,7 @@ nav a {
     font-weight: bold;
     border-radius: 10px;
     text-decoration: none;
+    color: black;
     padding: 10px;
     margin: 10px 10%;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
