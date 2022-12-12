@@ -46,10 +46,6 @@ document.getElementById("update-post-form").addEventListener("submit", async fun
     let titleFromInput = document.getElementById("title-input").value;
     let contentFromTextArea = document.getElementById("post-textarea").value;
     let authorFromInput = document.getElementById("author-input").value;
-    let tagsFromSelected = document.getElementById("tags-select").options["selected"];
-
-    console.log(tagsFromSelected)
-
 
         let formDataObject = {
             // tags: [],
@@ -70,4 +66,6 @@ document.getElementById("update-post-form").addEventListener("submit", async fun
     } catch (error) {
             console.log(error);
         }
+
+    location.replace("index.html");
     })
