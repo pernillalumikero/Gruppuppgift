@@ -62,10 +62,9 @@ async function fetchposts() {
 
             }
 
-
                 document.querySelector("main").innerHTML += `
-                    <p>${post.content}</p>
-                    <a href="#">Read more...<a>
+                    <p>${addReadMe(post.content)}</p>
+                    <a href="post.html?id=${post._id}">Read more<a>
                     <br>
                     <br>
                     <br>
@@ -82,4 +81,13 @@ async function fetchposts() {
     } catch (error) {
         console.log(error);
     }
+}
+
+function addReadMe(content) {
+    if (content.length > 100) {
+        content = content.substring(0, 100) + "...";
+    } else {
+        content += " ";
+    }
+    return content
 }
