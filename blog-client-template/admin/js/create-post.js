@@ -14,6 +14,10 @@ document.getElementById('create-post-form').addEventListener('submit', async fun
                 },
                 body: JSON.stringify(formDataObject)
             });
+
+            if(!response.ok) {
+                throw new Error(response.status);
+            }
             let data = await response.json();
 
             if(data.hasOwnProperty('_id')) {
@@ -56,9 +60,32 @@ let serializeForm = function (form) {
 // Button to auto-fill the different text fields in the form for quicker testing
 document.getElementById('lazy-btn').addEventListener('click', (e) => {
     e.preventDefault();
-    document.getElementById('title-input').setAttribute('value', 'Today was a good day');
-    document.getElementById('author-input').setAttribute('value', 'Charles Boyle');
-    document.getElementById('post-textarea').innerText = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi corrupti saepe alias suscipit veritatis distinctio fuga id ad dicta aliquid eius eos illo nobis, tenetur delectus, architecto, blanditiis officia at.';
+    getWikiHowContent();
     document.getElementById("tags-select").value = document.getElementById("tags-select").getElementsByTagName('option')[0].value;
     
 });
+
+const getWikiHowContent = () => {
+    let dataContent = '';
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': 'c039d7b0c5msh324122ad4915cfap146c4bjsnb594a77cb312',
+                'X-RapidAPI-Host': 'hargrimm-wikihow-v1.p.rapidapi.com'
+            }
+        };
+        fetch('https://hargrimm-wikihow-v1.p.rapidapi.com/steps?count=10', options)
+        .then(response => response.json())
+        .then(response => {
+            const dataValues = Object.values(response);
+            document.getElementById('title-input').value = dataValues[0].slice(0, -1);
+            document.getElementById('author-input').value = dataValues[2].slice(0, -1);
+            for(let value of dataValues) {
+                dataContent += value;
+                console.log(dataContent.length)
+            }
+
+            document.getElementById('post-textarea').innerText = dataContent;
+        })
+        .catch(err => console.error(err));
+}
