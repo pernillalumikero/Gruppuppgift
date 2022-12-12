@@ -59,4 +59,6 @@ document.getElementById('lazy-btn').addEventListener('click', (e) => {
     document.getElementById('title-input').setAttribute('value', 'Today was a good day');
     document.getElementById('author-input').setAttribute('value', 'Charles Boyle');
     document.getElementById('post-textarea').innerText = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi corrupti saepe alias suscipit veritatis distinctio fuga id ad dicta aliquid eius eos illo nobis, tenetur delectus, architecto, blanditiis officia at.';
+    document.getElementById("tags-select").value = document.getElementById("tags-select").getElementsByTagName('option')[0].value;
+    
 });
