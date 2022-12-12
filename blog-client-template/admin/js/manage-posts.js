@@ -3,7 +3,7 @@ fetchAllPosts();
 async function fetchAllPosts() {
     try {
         const response = await fetch('https://blog-api-assignment.up.railway.app/posts');
-        let posts = await response.json();
+        let posts      = await response.json();
 
         let postsHTML = '';
         for(let post of posts) {
