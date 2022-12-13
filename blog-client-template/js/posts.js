@@ -33,10 +33,14 @@ async function fetchposts() {
 
             const blog_date = new Date(`${post.date}`);
             let year = blog_date.getFullYear();
-            let month = blog_date.getMonth();
-            let day = blog_date.getDay();
+            let month = blog_date.getMonth()+1;
+            let day = blog_date.getDate();
             let hours = blog_date.getHours();
             let minutes = blog_date.getMinutes();
+
+            if (minutes < 10) {
+                minutes = "0" + minutes;
+            }
             
             if(post.title != null) {
                 let title = post.title.charAt(0).toUpperCase() + post.title.slice(1);

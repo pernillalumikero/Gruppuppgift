@@ -3,16 +3,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&family=Martian+Mono&family=Noto+Serif&family=Open+Sans&family=Rubik+Vinyl&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div id="post-wrapper">
         <h1 id="post-header"></h1>
-        <p id="post-author">Author: </p><p id="author" class="author"></p>
-        <i id="post-date"></i><i id="date"></i>
+        <div id="author-wrapper">
+            <p id="post-author"><b>Author: </b></p>
+            <p id="author" class="author"></p>
+        </div>
+        <i id="post-date" class="post-i"><b>Date: </b></i><i id="date" class="post-i"></i>
+        <i id="post-time" class="post-i"><b>Time: </b></i><i id="time" class="post-i"></i>
         <p id="post-content"></p><p id="content"></p>
-        <i id="post-tags">Tags: </i><i id="tags"></i>
-        <a id="post-back" href="index.html">&#8592 Back</a>
+        <i id="tags" class="post-i"></i>
+        <a id="post-back"href="index.html">&#8592 Back</a>
     </div>
     <script src="js/post.js"></script>
 </body>

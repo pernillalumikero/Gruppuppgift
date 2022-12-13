@@ -43,10 +43,6 @@ nav {
     color: brown;
 }
 
-i {
-    margin-left: 20px;
-}
-
 p {
     display: inline;
 }
@@ -114,7 +110,6 @@ h1:first-of-type {
 
 h2 {
     font-family: var(--headlines);
-    display: inline;
 }
 
 #admin-link {
@@ -150,15 +145,15 @@ h2 {
 
 #post-wrapper {
     width: 70%;
-    padding: 2%;
+    padding: 50px;
     margin: 50px auto;
     border: 2px solid black
 }
 
 #post-header {
     font-family: var(--headlines);
-    font-weight: 200;
-    text-decoration: none;
+    font-size: 30px;
+    padding: unset;
 }
 
 #post-back {
@@ -175,3 +170,16 @@ h2 {
 #post-back:hover {
     color: brown;
 }
+
+#author-wrapper {
+    margin-bottom: 15px;
+}
+
+#post-content, #content {
+    display: block;
+}
+
+#author, #post-author {
+    margin: unset;
+}
+
