@@ -12,13 +12,6 @@ async function fetchposts() {
         let postDate = new Date(post.date);
         const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
 
-            // const blog_date = new Date(`${post.date}`);
-            // let year = blog_date.getFullYear();
-            // let month = blog_date.getMonth();
-            // let day = blog_date.getDay();
-            // let hours = blog_date.getHours();
-            // let minutes = blog_date.getMinutes();
-
             document.querySelector("#date").innerHTML = `<p>${postDate.getDate()}-${months[postDate.getMonth()]}-${postDate.getFullYear()} ${postDate.getHours()}:${postDate.getMinutes()}:${postDate.getSeconds()}</p>`;
 
             if(post.title != null) {
@@ -32,16 +25,16 @@ async function fetchposts() {
 
             if (post.author != null) {
                 document.querySelector("#author").innerText = `
-                Author: ${post.author}`
+                ${post.author}`
             } else {
                 document.querySelector("#author").innerText = `
-                Author: Unknown`
+                Unknown`
             }
 
                 document.querySelector("#content").innerText = post.content;
 
             if (post.tags != null && post.tags != "") {
-                document.querySelector("#tags").innerText = `Tags: ${post.tags.join(", ")}`
+                document.querySelector("#tags").innerText = `${post.tags.join(", ")}`
             } else {
                 document.querySelector("#tags").innerText = ``;
             }
