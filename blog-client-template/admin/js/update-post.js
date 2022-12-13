@@ -15,13 +15,9 @@ async function getPost() {
     let post = await response.json();
 
     document.getElementById("title-input").value = post.title;
+    console.log(post.title)
     document.getElementById("author-input").value = post.author;
     document.getElementById("post-textarea").value = post.content;
-
-
-    // updateTitle.value = post.title;
-    // updateAuthor.value = post.author;
-    // updateContent.value = post.content;
     
     let select = document.getElementById("tags-select");
 
@@ -43,12 +39,25 @@ async function getPost() {
 document.getElementById("update-post-form").addEventListener("submit", async function (e) {
     e.preventDefault();
 
+    let select = document.getElementById("tags-select");
+
     let titleFromInput = document.getElementById("title-input").value;
     let contentFromTextArea = document.getElementById("post-textarea").value;
     let authorFromInput = document.getElementById("author-input").value;
 
+    let tags = [];
+
+    for (let i = 0; i < select.length; i++) {
+        let option = select.options[i];
+        console.log(tags)
+        if (option.getAttribute("selected") != null) {
+            tags += option;
+        }
+    }
+    
+
         let formDataObject = {
-            // tags: [],
+            // tags: tags,
             title: titleFromInput,
             content: contentFromTextArea,
             author: authorFromInput
@@ -67,5 +76,5 @@ document.getElementById("update-post-form").addEventListener("submit", async fun
             console.log(error);
         }
 
-    location.replace("index.html");
+    //location.replace("index.html");
     })

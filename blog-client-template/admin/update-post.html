@@ -6,11 +6,11 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <nav>
+    <nav id="update-post-nav">
         <a href="index.html">Back</a>
     </nav>
-    <div id="error-message"></div>
     <form id="update-post-form" action="">
+        <div id="error-message"></div>
         <label for="title-input">Title</label>
         <input type="text" name="title" id="title-input">
         <label for="author-input">Author</label>
@@ -26,9 +26,11 @@
             <option value="css-yourself">CSS-yourself</option>
         </select>
         <details value="Info">Select muliple:<br/>For Windows, hold ctrl key.<br/>For Mac, hold cmd key.</details>
+        <button id="lazy-btn">Lazy Button</button>
         <input type="submit" value="Post">
     </form>
 
     <script src="js/update-post.js"></script>
 </body>
 </html>
+
