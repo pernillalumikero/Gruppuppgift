@@ -12,7 +12,8 @@ async function fetchposts() {
         let postDate = new Date(post.date);
         const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
 
-            document.querySelector("#date").innerHTML = `<p>${postDate.getDate()}-${months[postDate.getMonth()]}-${postDate.getFullYear()} ${postDate.getHours()}:${postDate.getMinutes()}:${postDate.getSeconds()}</p>`;
+            document.querySelector("#date").innerHTML = `<p>${postDate.getDate()}-${months[postDate.getMonth()]}-${postDate.getFullYear()}</p>`;
+            document.querySelector("#time").innerText =`${postDate.getHours()}:${postDate.getMinutes()}:${postDate.getSeconds()}`
 
             if(post.title != null) {
                 let title = post.title.charAt(0).toUpperCase() + post.title.slice(1);
@@ -24,17 +25,15 @@ async function fetchposts() {
             }
 
             if (post.author != null) {
-                document.querySelector("#author").innerText = `
-                ${post.author}`
+                document.querySelector("#author").innerText = `${post.author}`
             } else {
-                document.querySelector("#author").innerText = `
-                Unknown`
+                document.querySelector("#author").innerText = ` Unknown`
             }
 
                 document.querySelector("#content").innerText = post.content;
 
             if (post.tags != null && post.tags != "") {
-                document.querySelector("#tags").innerText = `${post.tags.join(", ")}`
+                document.querySelector("#tags").innerHTML = `<i>Tags: ${post.tags.join(", ")}</i>`
             } else {
                 document.querySelector("#tags").innerText = ``;
             }
