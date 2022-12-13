@@ -1,3 +1,31 @@
+document.querySelector("main").addEventListener("mouseenter", (e) => {
+    e.target.style.backgroundImage = "url('./img/hyde-bg.jpg')";
+    e.target.innerHTML = `
+    <h2 id="author-hyde-header" class="hyde-colors">Mr Hyde</h2>
+            <p class="hyde-colors">Mr Hyde is an eccentric, spontaneous, highly irregular person trapped in Dr Jekylls body. But he manages to break out every now and then when Dr Jekyll finds himself in stressed or unconfortable situations. Mr Hyde can deal with anything, with a crazy grin on his face.</p>
+            <div id="author-wrapper">
+                <div class="pic-holder" id="author-pic-holder"><img src="./img/hyde.jpg" alt=""></div>
+                <div class="pic-text" id="author-pic-text">
+                    <p class="hyde-colors" id="hyde-signature"><b>Mr Hyde</b></p><br><br><p class="hyde-colors">Photo by Armin Lotfi on 
+                    <a class="hyde-colors" href="https://unsplash.com/license">Unsplash</a></p>
+                </div>
+            </div>`;
+ })
+ document.querySelector("main").addEventListener("mouseleave", (e) => {
+    e.target.style.backgroundImage = "unset";
+     e.target.innerHTML = `
+     <h2>Dr Jekyll</h2>
+            <p>Dr Jekyll is a very calm and well put together, balanced and secure person who you might not always notice in a room. He favors a moderate and minimalistic design, whether it be regarding his clothes, home decor or blog. Sometimes though he has black-outs and wierd, crazy things show up in the most unexpected places...</p>
+            <div id="author-wrapper">
+                <div class="pic-holder" id="author-pic-holder"><img src="./img/jekyll.jpg" alt=""></div>
+                <div class="pic-text" id="author-pic-text">
+                    <p class="author-jekyll"><b>Dr Jekyll</b></p><br><br><p> Photo by Paolo Bendandi on <a href="https://unsplash.com/license">Unsplash</a></p>
+                </div>
+            </div>
+            `
+ })
+
+
 fetchTitles();
 
 async function fetchTitles() {
