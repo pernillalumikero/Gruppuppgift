@@ -25,16 +25,16 @@ async function fetchposts() {
 
             if (post.author != null) {
                 document.querySelector("#author").innerText = `
-                Author: ${post.author}`
+                ${post.author}`
             } else {
                 document.querySelector("#author").innerText = `
-                Author: Unknown`
+                Unknown`
             }
 
                 document.querySelector("#content").innerText = post.content;
 
             if (post.tags != null && post.tags != "") {
-                document.querySelector("#tags").innerText = `Tags: ${post.tags.join(", ")}`
+                document.querySelector("#tags").innerText = `${post.tags.join(", ")}`
             } else {
                 document.querySelector("#tags").innerText = ``;
             }
