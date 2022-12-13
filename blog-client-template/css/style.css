@@ -15,9 +15,11 @@
 
 /* INDEX STYLING */
 
+
 .main-content {
     display: flex;
     flex-direction: row;
+    text-align: center;
 }
 
 nav {
@@ -61,7 +63,11 @@ p {
     margin-bottom: 50px;
 }
 
-img {
+.img-blog {
+    margin-bottom: 10px;
+}
+
+.img-author {
     width: 200px;
     height: 200px;
     border-radius: 50%;
@@ -84,6 +90,10 @@ aside {
     width: fit-content;
 }
 
+.aside-header {
+    border-bottom: 2px solid black;
+}
+
 .aside-header, .aside-header-hyde {
     width: 70%;
     margin: 30px auto 0 auto;
@@ -91,7 +101,6 @@ aside {
 }
 
 .aside-header-hyde {
-    
     background-color: black;
     color: white;
     

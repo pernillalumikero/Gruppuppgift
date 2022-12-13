@@ -7,7 +7,7 @@ document.querySelector("aside").addEventListener("mouseenter", (e) => {
     e.target.innerHTML = `
     <a class="aside-link" href="author.html">
             <h2 class="aside-header-hyde">About the author</h2>
-            <div class="pic-holder" id="hyde-style-pic"><img src="./img/hyde.jpg" alt=""></div>
+            <div class="pic-holder" id="hyde-style-pic"><img class="img-author" src="./img/hyde.jpg" alt=""></div>
             <p id="hyde-signature" class="hyde-colors"><b>Mr Hyde</b></p>
             <br>
             <br>
@@ -20,7 +20,7 @@ document.querySelector("aside").addEventListener("mouseleave", (e) => {
     e.target.style.backgroundImage = "unset";
     e.target.innerHTML = `
     <h2 class="aside-header">About the author</h2>
-    <div class="pic-holder"><img src="./img/jekyll.jpg" alt=""></div>
+    <div class="pic-holder"><img class="img-author" src="./img/jekyll.jpg" alt=""></div>
     <div class="pic-text">
         <p class="author-jekyll"><b>Dr Jekyll</b></p>
         <br>
@@ -33,8 +33,11 @@ async function fetchposts() {
     try {
         const response = await fetch("https://blog-api-assignment.up.railway.app/posts");
         const posts = await response.json();
+
+        let i = 8;
         
         for (let post of posts) {
+            i++;
 
             const blog_date = new Date(`${post.date}`);
             let year = blog_date.getFullYear();
@@ -61,6 +64,8 @@ async function fetchposts() {
                 <br>`
             }
 
+            document.querySelector("main").innerHTML += `<img class="img-blog" src="https://picsum.photos/id/${i}/600/300">`
+
             let signiture = "";
 
             function choseSignature(min, max) {
@@ -85,10 +90,11 @@ async function fetchposts() {
 
             if (post.author != null) {
                 document.querySelector("main").innerHTML += `
-                <p>Author: </p><p id=${signiture}>${post.author}</p><br>`
+                <br>
+                <p><b>Author: </b></p><p id=${signiture}>${post.author}</p><br>`
             } else {
                 document.querySelector("main").innerHTML += `
-                <p>Author: </p><p id=${signiture}>Unknown</p>
+                <p><b>Author: </b></p><p id=${signiture}>Unknown</p>
                 <br>`
 
             }
@@ -100,6 +106,7 @@ async function fetchposts() {
                     <br>
                     <br>
                 `;
+
 
             if (post.tags != null && post.tags != "") {
                 document.querySelector("main").innerHTML += `<i>Tags: ${post.tags.join(", ")}</i><br><br>`
