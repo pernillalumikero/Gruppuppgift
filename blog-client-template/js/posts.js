@@ -3,27 +3,32 @@ fetchposts();
 console.log(document.getElementById("pic-holder"))
 
 document.querySelector("aside").addEventListener("mouseenter", (e) => {
-   e.target.innerHTML = `
-   <div id="pic-holder"><img src="./img/hyde.jpg" alt=""></div>
-   <p><b>Mr Hyde</b></p>
-   <br>
-   <br>
-   <p>Photo by Armin Lotfi on 
-   <a href="https://unsplash.com/s/photos/crazy?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-   </p>`;
+    e.target.style.backgroundImage = "url('./img/hyde-bg.jpg')";
+    e.target.innerHTML = `
+    <a class="aside-link" href="author.html">
+            <h2 class="aside-header-hyde">About the author</h2>
+            <div class="pic-holder" id="hyde-style-pic"><img src="./img/hyde.jpg" alt=""></div>
+            <p id="hyde-signature" class="hyde-colors"><b>Mr Hyde</b></p>
+            <br>
+            <br>
+            <p class="photo-credit">Photo by Armin Lotfi on 
+            <a href="https://unsplash.com/license">Unsplash</a>
+            </p>
+    </a>`;
 })
 document.querySelector("aside").addEventListener("mouseleave", (e) => {
+    e.target.style.backgroundImage = "unset";
     e.target.innerHTML = `
-    <div id="pic-holder"><img src="./img/jekyll.jpg" alt=""></div>
-    <div id="pic-text">
-        <p><b>Dr Jekyll</b></p>
+    <h2 class="aside-header">About the author</h2>
+    <div class="pic-holder"><img src="./img/jekyll.jpg" alt=""></div>
+    <div class="pic-text">
+        <p class="author-jekyll"><b>Dr Jekyll</b></p>
         <br>
         <br>
-        <p> Photo by Paolo Bendandi on <a href="https://unsplash.com/s/photos/crazy?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
+        <p> Photo by Paolo Bendandi on <a href="https://unsplash.com/license">Unsplash</a></p>
     </div>`
 })
 
-console.log(document.getElementById("pic-text").innerHTML)
 async function fetchposts() {
     try {
         const response = await fetch("https://blog-api-assignment.up.railway.app/posts");
@@ -51,24 +56,46 @@ async function fetchposts() {
                 
             } else {
                 document.querySelector("main").innerHTML += `<h2>No title</h2>
-                <i><b>Date:</b> ${year}/${month}/${day} <b>Time:</b> ${hours}:${minutes}</i>
+                <i><b>Date:</b> ${year}/${month}/${day}<b>Time:</b> ${hours}:${minutes}</i>
                 <br>
                 <br>`
             }
 
+            let signiture = "";
+
+            function choseSignature(min, max) {
+            
+                if (post.author == "Mr Hyde") {
+                    signiture = "hyde-signature"
+                } else if (post.author == "Dr Jekyll") {
+                    signiture = "jekyll-signiture";
+                } else {
+                    let number = Math.random()*(max-min)+min;
+                    if (number > min+1) {
+                        signiture = "hyde-signature";
+                    } else {
+                        signiture = "jekyll-signiture";
+                    }
+                }
+            
+                return signiture;
+            }
+
+            choseSignature(0, 3);
+
             if (post.author != null) {
                 document.querySelector("main").innerHTML += `
-                <p>Author: </p><p class="author">${post.author}</p><br>`
+                <p>Author: </p><p id=${signiture}>${post.author}</p><br>`
             } else {
                 document.querySelector("main").innerHTML += `
-                <p>Author: </p><p class="author">Unknown</p>
+                <p>Author: </p><p id=${signiture}>Unknown</p>
                 <br>`
 
             }
 
                 document.querySelector("main").innerHTML += `
                     <p>${addReadMe(post.content)}</p>
-                    <a class="post-link" href="post.html?id=${post._id}">Read more<a>
+                    <b><a class="post-link" href="post.html?id=${post._id}">Read more<a></b>
                     <br>
                     <br>
                     <br>

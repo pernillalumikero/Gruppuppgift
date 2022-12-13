@@ -3,15 +3,19 @@
     --linkwidth: 100px;
 
     /*Fonts*/
-    --handwriting: 'La Belle Aurore', cursive;
+    --hyde-handwriting: 'La Belle Aurore', cursive;
+    --jekyll-handwriting: 'Patrick Hand', cursive;
     --site-header: 'Rubik Vinyl', cursive;
     --headlines: 'Martian Mono', monospace;
-    --links: ''Courier New', Courier, monospace'
+    --links: ''Courier New', Courier, monospace';
+
+    /* COLORS */
+    --accent-color: rgb(95, 9, 208);
 }
 
 /* INDEX STYLING */
 
-#main-content {
+.main-content {
     display: flex;
     flex-direction: row;
 }
@@ -40,14 +44,14 @@ nav {
 }
 
 #active-link {
-    color: brown;
+    color: var(--accent-color);
 }
 
 p {
     display: inline;
 }
 
-#pic-holder {
+.pic-holder {
     margin: 50px auto;
     width: 200px;
     height: 200px;
@@ -68,6 +72,34 @@ aside {
     text-align: center;
     margin: 20px auto;
     width: 30%;
+    height: fit-content;
+    padding-bottom: 30px;
+}
+
+#hyde-style-pic {
+    border: 2px solid yellow;
+}
+
+#author-hyde-header {
+    width: fit-content;
+}
+
+.aside-header, .aside-header-hyde {
+    width: 70%;
+    margin: 30px auto 0 auto;
+    padding: 5px;
+}
+
+.aside-header-hyde {
+    
+    background-color: black;
+    color: white;
+    
+}
+
+.aside-link {
+    text-decoration: none;
+    color: black;
 }
 
 main {
@@ -75,6 +107,7 @@ main {
     padding: 50px;
     width: 50%;
     border: 2px double black;
+    height: fit-content;
 }
 
 #wrapper {
@@ -84,10 +117,49 @@ main {
     align-items: center;
 }
 
-.author {
+.author-hyde {
     font-size: 22px;
     text-transform: capitalize;
-    font-family: var(--handwriting)
+    font-family: var(--hyde-handwriting);
+}
+
+.hyde-colors {
+    background-color: black;
+    color: white;
+}
+
+#hyde-signature {
+    font-size: 25px;
+    font-family: var(--hyde-handwriting);
+}
+
+#jekyll-signiture {
+    font-size: 25px;
+    font-family: var(--jekyll-handwriting);
+}
+
+.author-jekyll {
+    font-size: 25px;
+    text-transform: capitalize;
+    font-family: var(--jekyll-handwriting)
+}
+
+.author-aside-titles {
+    padding-top: 15px;
+}
+
+.photo-credit {
+    background-color: black;
+    color: white;
+}
+
+.author {
+    font-family: var(--jekyll-handwriting);
+}
+
+.photo-credit a {
+    background-color: black;
+    color: white;
 }
 
 h1 {
@@ -101,12 +173,12 @@ h1:first-of-type {
 }
 
 #jekyll {
-    font-family: var(--site-header);
+    font-family: 'Patrick Hand', cursive;;
 }
 
 #hyde {
-    color: brown;
-    font-family: var(--handwriting);
+    color: var(--accent-color);
+    font-family: var(--hyde-handwriting);
 }
 
 h2 {
@@ -115,11 +187,12 @@ h2 {
 
 #admin-link {
     margin-left: 78.7%;
-    margin-top: 50px;
+    margin-top: 55px;
     text-align: center;
     display: block;
-    font-size: 20px;
-    font-family: var(--links);
+    font-size: 15px;
+    font-family: var(--headlines);
+    text-transform: uppercase;
     text-decoration: none;
     color: black;
     background-color: white;
@@ -129,7 +202,7 @@ h2 {
 }
 
 #admin-link:hover {
-    color: brown;
+    color: var(--accent-color);
 }
 
 #border {
@@ -143,8 +216,12 @@ h2 {
 }
 
 .post-link {
-    color: brown;
+    color: var(--accent-color);
     text-decoration: none;
+}
+
+.post-link:hover {
+    border-bottom: 1px solid black;
 }
 
 /* POST STYLING */
@@ -174,7 +251,7 @@ h2 {
 }
 
 #post-back:hover {
-    color: brown;
+    color: var(--accent-color);
 }
 
 #author-wrapper {
@@ -185,10 +262,6 @@ h2 {
     display: block;
 }
 
-#author, #post-author {
-    margin: unset;
-}
-
 /* ABOUT STYLING */
 
 #about-signature {
@@ -196,3 +269,15 @@ h2 {
     margin-right: 50px;
 }
 
+/* AUTHOR STYLING */
+
+#author-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#author-pic-holder {
+    margin: 50px;
+    margin-left: 18%;
+}
