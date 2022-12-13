@@ -68,7 +68,7 @@ async function fetchposts() {
 
                 document.querySelector("main").innerHTML += `
                     <p>${addReadMe(post.content)}</p>
-                    <a href="post.html?id=${post._id}">Read more<a>
+                    <a class="post-link" href="post.html?id=${post._id}">Read more<a>
                     <br>
                     <br>
                     <br>
