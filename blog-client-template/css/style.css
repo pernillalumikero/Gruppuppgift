@@ -11,7 +11,7 @@
 
 /* INDEX STYLING */
 
-#main-content {
+.main-content {
     display: flex;
     flex-direction: row;
 }
@@ -47,7 +47,7 @@ p {
     display: inline;
 }
 
-#pic-holder {
+.pic-holder {
     margin: 50px auto;
     width: 200px;
     height: 200px;
@@ -68,6 +68,21 @@ aside {
     text-align: center;
     margin: 20px auto;
     width: 30%;
+    height: fit-content;
+    padding-bottom: 30px;
+}
+
+.aside-header {
+    width: 70%;
+    margin: 30px auto 0 auto;
+    background-color: black;
+    color: white;
+    padding: 5px;
+}
+
+.aside-link {
+    text-decoration: none;
+    color: black;
 }
 
 main {
@@ -75,6 +90,7 @@ main {
     padding: 50px;
     width: 50%;
     border: 2px double black;
+    height: fit-content;
 }
 
 #wrapper {
@@ -88,6 +104,10 @@ main {
     font-size: 22px;
     text-transform: capitalize;
     font-family: var(--handwriting)
+}
+
+.author-aside-titles {
+    padding-top: 15px;
 }
 
 h1 {
@@ -147,6 +167,10 @@ h2 {
     text-decoration: none;
 }
 
+.post-link:hover {
+    border-bottom: 1px solid black;
+}
+
 /* POST STYLING */
 
 #post-wrapper {
@@ -196,3 +220,15 @@ h2 {
     margin-right: 50px;
 }
 
+/* AUTHOR STYLING */
+
+#author-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#author-pic-holder {
+    margin: 50px;
+    margin-left: 18%;
+}
