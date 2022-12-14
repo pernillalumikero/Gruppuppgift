@@ -1,5 +1,7 @@
 let urlParams = new URLSearchParams(window.location.search);
 let postId = urlParams.get("id");
+let picNum = urlParams.get("pic-num");
+let authorSignature = urlParams.get("author");
 
 fetchposts();
 
@@ -25,15 +27,17 @@ async function fetchposts() {
             }
 
             if (post.author != null) {
-                document.querySelector("#author").innerText = `${post.author}`
+                document.querySelector("#author-wrapper").innerHTML += `<p id=${authorSignature}>${post.author}</p><br>`
             } else {
-                document.querySelector("#author").innerText = ` Unknown`
+                document.querySelector("#author-wrapper").innerHTML = `<p id=${authorSignature}> Unknown</p>`
             }
+
+            document.querySelector("#pic-div").innerHTML = `<img class="img-post" src="https://picsum.photos/id/${picNum}/600/300">`
 
                 document.querySelector("#content").innerText = post.content;
 
             if (post.tags != null && post.tags != "") {
-                document.querySelector("#tags").innerHTML = `<i>Tags: ${post.tags.join(", ")}</i>`
+                document.querySelector("#tags").innerHTML = `<i><b>Tags: </b>${post.tags.join(", ")}</i>`
             } else {
                 document.querySelector("#tags").innerText = ``;
             }
