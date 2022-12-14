@@ -5,9 +5,8 @@
     /*Fonts*/
     --hyde-handwriting: 'La Belle Aurore', cursive;
     --jekyll-handwriting: 'Patrick Hand', cursive;
-    --site-header: 'Rubik Vinyl', cursive;
+    --other-handwriting: 'Nanum Pen Script', cursive;
     --headlines: 'Martian Mono', monospace;
-    --links: ''Courier New', Courier, monospace';
 
     /* COLORS */
     --accent-color: rgb(95, 9, 208);
@@ -47,6 +46,11 @@ nav {
 
 #active-link {
     color: var(--accent-color);
+}
+
+#header-link {
+    text-decoration: unset;
+    color: unset;
 }
 
 p {
@@ -115,7 +119,7 @@ main {
     margin: 20px auto;
     padding: 50px;
     width: 50%;
-    border: 2px double black;
+    border: 2px solid black;
     height: fit-content;
 }
 
@@ -142,9 +146,15 @@ main {
     font-family: var(--hyde-handwriting);
 }
 
-#jekyll-signiture {
-    font-size: 25px;
+#jekyll-signature {
+    font-size: 22px;
     font-family: var(--jekyll-handwriting);
+}
+
+#other-signature {
+    text-transform: capitalize;
+    font-size: 25px;
+    font-family: var(--other-handwriting);
 }
 
 .author-jekyll {
@@ -239,13 +249,15 @@ h2 {
     width: 70%;
     padding: 50px;
     margin: 50px auto;
-    border: 2px solid black
+    border: 2px solid black;
 }
 
 #post-header {
     font-family: var(--headlines);
     font-size: 30px;
     padding: unset;
+    margin: unset;
+    margin-top: 20px;
 }
 
 #post-back {
@@ -263,12 +275,32 @@ h2 {
     color: var(--accent-color);
 }
 
-#author-wrapper {
-    margin-bottom: 15px;
-}
-
 #post-content, #content {
     display: block;
+}
+
+#pic-div {
+    text-align: center;
+}
+
+.img-post {
+    margin-bottom: 30px;
+}
+
+#text {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+#pic-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#author-text {
+    font-size: 22px;
 }
 
 /* ABOUT STYLING */
@@ -289,4 +321,51 @@ h2 {
 #author-pic-holder {
     margin: 50px;
     margin-left: 18%;
+}
+
+
+/* CONTACT STYLING */
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+  }
+
+.fa:hover {
+    color: var(--accent-color);
+}
+
+.fa-twitter, .fa-facebook, .fa-linkedin, .fa-instagram {
+    background: white;
+    color: black;
+  }
+
+#hyde-wrapper .fa-twitter:hover {
+    background: #55ACEE;
+}
+#hyde-wrapper .fa-facebook:hover {
+    background: #3B5998;
+}
+#hyde-wrapper .fa-linkedin:hover {
+    background: #007bb5;
+}
+#hyde-wrapper .fa-instagram:hover {
+    background: #125688;
+}
+#hyde-wrapper .fa-reddit:hover {
+    background: #ff5700;
+}
+#hyde-wrapper .fa-snapchat:hover {
+    background: #fffc00;
+}
+#hyde-wrapper .fa-youtube:hover {
+    background: #bb0000;
+} 
+
+#hyde-wrapper > a{
+    background: black;
+    color: white;
 }
