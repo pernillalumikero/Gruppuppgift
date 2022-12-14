@@ -81,7 +81,7 @@ const getWikiHowContent = () => {
             document.getElementById('title-input').value = dataValues[0].slice(0, -1);
             document.getElementById('author-input').value = dataValues[2].slice(0, -1);
             for(let value of dataValues) {
-                dataContent += value;
+                dataContent += value + " ";
                 console.log(dataContent.length)
             }
 

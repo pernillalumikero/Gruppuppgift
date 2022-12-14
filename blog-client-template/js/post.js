@@ -1,5 +1,7 @@
 let urlParams = new URLSearchParams(window.location.search);
 let postId = urlParams.get("id");
+let picNum = urlParams.get("pic-num");
+let authorSignature = urlParams.get("author");
 
 fetchposts();
 
@@ -12,14 +14,8 @@ async function fetchposts() {
         let postDate = new Date(post.date);
         const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
 
-            // const blog_date = new Date(`${post.date}`);
-            // let year = blog_date.getFullYear();
-            // let month = blog_date.getMonth();
-            // let day = blog_date.getDay();
-            // let hours = blog_date.getHours();
-            // let minutes = blog_date.getMinutes();
-
-            document.querySelector("#date").innerHTML = `<p>${postDate.getDate()}-${months[postDate.getMonth()]}-${postDate.getFullYear()} ${postDate.getHours()}:${postDate.getMinutes()}:${postDate.getSeconds()}</p>`;
+            document.querySelector("#date").innerHTML = `<p>${postDate.getDate()}-${months[postDate.getMonth()]}-${postDate.getFullYear()}</p>`;
+            document.querySelector("#time").innerText =`${postDate.getHours()}:${postDate.getMinutes()}:${postDate.getSeconds()}`
 
             if(post.title != null) {
                 let title = post.title.charAt(0).toUpperCase() + post.title.slice(1);
@@ -31,17 +27,17 @@ async function fetchposts() {
             }
 
             if (post.author != null) {
-                document.querySelector("#author").innerText = `
-                Author: ${post.author}`
+                document.querySelector("#author-wrapper").innerHTML += `<p id=${authorSignature}>${post.author}</p><br>`
             } else {
-                document.querySelector("#author").innerText = `
-                Author: Unknown`
+                document.querySelector("#author-wrapper").innerHTML = `<p id=${authorSignature}> Unknown</p>`
             }
+
+            document.querySelector("#pic-div").innerHTML = `<img class="img-post" src="https://picsum.photos/id/${picNum}/600/300">`
 
                 document.querySelector("#content").innerText = post.content;
 
             if (post.tags != null && post.tags != "") {
-                document.querySelector("#tags").innerText = `Tags: ${post.tags.join(", ")}`
+                document.querySelector("#tags").innerHTML = `<i><b>Tags: </b>${post.tags.join(", ")}</i>`
             } else {
                 document.querySelector("#tags").innerText = ``;
             }

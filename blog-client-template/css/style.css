@@ -3,15 +3,22 @@
     --linkwidth: 100px;
 
     /*Fonts*/
-    --handwriting: 'La Belle Aurore', cursive;
-    --site-header: 'Rubik Vinyl', cursive;
+    --hyde-handwriting: 'La Belle Aurore', cursive;
+    --jekyll-handwriting: 'Patrick Hand', cursive;
+    --other-handwriting: 'Nanum Pen Script', cursive;
     --headlines: 'Martian Mono', monospace;
-    --links: ''Courier New', Courier, monospace'
+
+    /* COLORS */
+    --accent-color: rgb(95, 9, 208);
 }
 
-#main-content {
+/* INDEX STYLING */
+
+
+.main-content {
     display: flex;
     flex-direction: row;
+    text-align: center;
 }
 
 nav {
@@ -38,18 +45,19 @@ nav {
 }
 
 #active-link {
-    color: brown;
+    color: var(--accent-color);
 }
 
-i {
-    margin-left: 20px;
+#header-link {
+    text-decoration: unset;
+    color: unset;
 }
 
 p {
     display: inline;
 }
 
-#pic-holder {
+.pic-holder {
     margin: 50px auto;
     width: 200px;
     height: 200px;
@@ -59,7 +67,11 @@ p {
     margin-bottom: 50px;
 }
 
-img {
+.img-blog {
+    margin-bottom: 10px;
+}
+
+.img-author {
     width: 200px;
     height: 200px;
     border-radius: 50%;
@@ -70,13 +82,45 @@ aside {
     text-align: center;
     margin: 20px auto;
     width: 30%;
+    height: fit-content;
+    padding-bottom: 30px;
+}
+
+#hyde-style-pic {
+    border: 2px solid yellow;
+}
+
+#author-hyde-header {
+    width: fit-content;
+}
+
+.aside-header {
+    border-bottom: 2px solid black;
+}
+
+.aside-header, .aside-header-hyde {
+    width: 70%;
+    margin: 30px auto 0 auto;
+    padding: 5px;
+}
+
+.aside-header-hyde {
+    background-color: black;
+    color: white;
+    
+}
+
+.aside-link {
+    text-decoration: none;
+    color: black;
 }
 
 main {
     margin: 20px auto;
     padding: 50px;
     width: 50%;
-    border: 2px double black;
+    border: 2px solid black;
+    height: fit-content;
 }
 
 #wrapper {
@@ -86,10 +130,55 @@ main {
     align-items: center;
 }
 
-.author {
+.author-hyde {
     font-size: 22px;
     text-transform: capitalize;
-    font-family: var(--handwriting)
+    font-family: var(--hyde-handwriting);
+}
+
+.hyde-colors {
+    background-color: black;
+    color: white;
+}
+
+#hyde-signature {
+    font-size: 25px;
+    font-family: var(--hyde-handwriting);
+}
+
+#jekyll-signature {
+    font-size: 22px;
+    font-family: var(--jekyll-handwriting);
+}
+
+#other-signature {
+    text-transform: capitalize;
+    font-size: 25px;
+    font-family: var(--other-handwriting);
+}
+
+.author-jekyll {
+    font-size: 25px;
+    text-transform: capitalize;
+    font-family: var(--jekyll-handwriting)
+}
+
+.author-aside-titles {
+    padding-top: 15px;
+}
+
+.photo-credit {
+    background-color: black;
+    color: white;
+}
+
+.author {
+    font-family: var(--jekyll-handwriting);
+}
+
+.photo-credit a {
+    background-color: black;
+    color: white;
 }
 
 h1 {
@@ -103,25 +192,26 @@ h1:first-of-type {
 }
 
 #jekyll {
-    font-family: var(--site-header);
+    font-family: 'Patrick Hand', cursive;;
 }
 
 #hyde {
-    font-family: var(--handwriting);
+    color: var(--accent-color);
+    font-family: var(--hyde-handwriting);
 }
 
 h2 {
     font-family: var(--headlines);
-    display: inline;
 }
 
 #admin-link {
     margin-left: 78.7%;
-    margin-top: 50px;
+    margin-top: 55px;
     text-align: center;
     display: block;
-    font-size: 20px;
-    font-family: var(--links);
+    font-size: 15px;
+    font-family: var(--headlines);
+    text-transform: uppercase;
     text-decoration: none;
     color: black;
     background-color: white;
@@ -131,7 +221,7 @@ h2 {
 }
 
 #admin-link:hover {
-    color: brown;
+    color: var(--accent-color);
 }
 
 #border {
@@ -142,4 +232,140 @@ h2 {
     padding: 5px;
     border: 2px solid black;
     position: absolute;
+}
+
+.post-link {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.post-link:hover {
+    border-bottom: 1px solid black;
+}
+
+/* POST STYLING */
+
+#post-wrapper {
+    width: 70%;
+    padding: 50px;
+    margin: 50px auto;
+    border: 2px solid black;
+}
+
+#post-header {
+    font-family: var(--headlines);
+    font-size: 30px;
+    padding: unset;
+    margin: unset;
+    margin-top: 20px;
+}
+
+#post-back {
+    display: block;
+    margin-top: 30px;
+    margin-left: 30px;
+    color: black; 
+    text-decoration: none;  
+    text-transform: uppercase;
+    font-family: var(--headlines);
+    font-size: 20px;
+}
+
+#post-back:hover {
+    color: var(--accent-color);
+}
+
+#post-content, #content {
+    display: block;
+}
+
+#pic-div {
+    text-align: center;
+}
+
+.img-post {
+    margin-bottom: 30px;
+}
+
+#text {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+#pic-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#author-text {
+    font-size: 22px;
+}
+
+/* ABOUT STYLING */
+
+#about-signature {
+    float: right;
+    margin-right: 50px;
+}
+
+/* AUTHOR STYLING */
+
+#author-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#author-pic-holder {
+    margin: 50px;
+    margin-left: 18%;
+}
+
+
+/* CONTACT STYLING */
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+  }
+
+.fa:hover {
+    color: var(--accent-color);
+}
+
+.fa-twitter, .fa-facebook, .fa-linkedin, .fa-instagram {
+    background: white;
+    color: black;
+  }
+
+#hyde-wrapper .fa-twitter:hover {
+    background: #55ACEE;
+}
+#hyde-wrapper .fa-facebook:hover {
+    background: #3B5998;
+}
+#hyde-wrapper .fa-linkedin:hover {
+    background: #007bb5;
+}
+#hyde-wrapper .fa-instagram:hover {
+    background: #125688;
+}
+#hyde-wrapper .fa-reddit:hover {
+    background: #ff5700;
+}
+#hyde-wrapper .fa-snapchat:hover {
+    background: #fffc00;
+}
+#hyde-wrapper .fa-youtube:hover {
+    background: #bb0000;
+} 
+
+#hyde-wrapper > a{
+    background: black;
+    color: white;
 }
