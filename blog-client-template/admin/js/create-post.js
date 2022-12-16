@@ -65,6 +65,7 @@ document.getElementById('lazy-btn').addEventListener('click', (e) => {
     
 });
 
+// Function to fill fields with random text from the WikiHow API
 const getWikiHowContent = () => {
     let dataContent = '';
         const options = {
@@ -79,10 +80,9 @@ const getWikiHowContent = () => {
         .then(response => {
             const dataValues = Object.values(response);
             document.getElementById('title-input').value = dataValues[0].slice(0, -1);
-            document.getElementById('author-input').value = dataValues[2].slice(0, -1);
+            document.getElementById('author-input').value = "Dr. Jekyll / Mr. Hyde";
             for(let value of dataValues) {
                 dataContent += value + " ";
-                console.log(dataContent.length)
             }
 
             document.getElementById('post-textarea').innerText = dataContent;
