@@ -1,10 +1,16 @@
+asideToggleAuthor();
+fetchTitles();
+
+//toggle author in main content
+function asideToggleAuthor() {
+
 document.querySelector("main").addEventListener("mouseenter", (e) => {
     e.target.style.backgroundImage = "url('./img/hyde-bg.jpg')";
     e.target.innerHTML = `
     <h2 id="author-hyde-header" class="hyde-colors">Mr Hyde</h2>
             <p class="hyde-colors">Mr Hyde is an eccentric, spontaneous, highly irregular person trapped in Dr Jekylls body. But he manages to break out every now and then when Dr Jekyll finds himself in stressed or unconfortable situations. Mr Hyde can deal with anything, with a crazy grin on his face.</p>
             <div id="author-wrapper">
-                <div class="pic-holder" id="author-pic-holder"><img class="img-author" src="./img/hyde.jpg" alt=""></div>
+                <div class="pic-holder" class="hyde-style-pic" id="author-pic-holder"><img class="img-author" src="./img/hyde.jpg" alt=""></div>
                 <div class="pic-text" id="author-pic-text">
                     <p class="hyde-colors" id="hyde-signature"><b>Mr Hyde</b></p><br><br><p class="hyde-colors">Photo by Armin Lotfi on 
                     <a class="hyde-colors" href="https://unsplash.com/license">Unsplash</a></p>
@@ -24,10 +30,9 @@ document.querySelector("main").addEventListener("mouseenter", (e) => {
             </div>
             `
  })
+}
 
-
-fetchTitles();
-
+//displaying a few titles in aside
 async function fetchTitles() {
     try {
         const response = await fetch("https://blog-api-assignment.up.railway.app/posts");
