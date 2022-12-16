@@ -3,11 +3,11 @@ let postId = urlParams.get("id");
 let picNum = urlParams.get("pic-num");
 let authorSignature = urlParams.get("author");
 
-fetchposts();
+fetchpost();
 
-async function fetchposts() {
+//function to get specific post by id, display all related info
+async function fetchpost() {
     try {
-        console.log(postId)
         const response = await fetch (`https://blog-api-assignment.up.railway.app/posts/${postId}`);
         const post = await response.json();
         
