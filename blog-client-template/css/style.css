@@ -95,6 +95,10 @@ p {
     display: inline;
 }
 
+#side-header-jekkyll {
+    font-size: 45px;
+}
+
 #admin-link {
     margin-left: 78.7%;
     margin-top: 55px;
